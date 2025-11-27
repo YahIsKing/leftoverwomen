@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react';
 import {
   AgeBracket,
+  AGE_BRACKETS,
   Denomination,
   ReligiosityLevel,
   CalculatorFilters,
@@ -20,8 +21,8 @@ interface UseCalculatorOptions {
 }
 
 export function useCalculator({ censusData, religiousData }: UseCalculatorOptions) {
-  // Filter state
-  const [ageBrackets, setAgeBrackets] = useState<AgeBracket[]>([]);
+  // Filter state - default to all age brackets selected
+  const [ageBrackets, setAgeBrackets] = useState<AgeBracket[]>([...AGE_BRACKETS]);
   const [denomination, setDenomination] = useState<Denomination>('all');
   const [religiosity, setReligiosity] = useState<ReligiosityLevel>('all');
   const [includeWidows, setIncludeWidows] = useState(true);

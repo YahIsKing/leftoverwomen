@@ -12,6 +12,7 @@ export type Denomination =
   | 'evangelical'
   | 'catholic'
   | 'mainline'
+  | 'blackProtestant'
   | 'orthodox'
   | 'other';
 
@@ -20,6 +21,7 @@ export const DENOMINATIONS: { value: Denomination; label: string }[] = [
   { value: 'evangelical', label: 'Evangelical Protestant' },
   { value: 'catholic', label: 'Catholic' },
   { value: 'mainline', label: 'Mainline Protestant' },
+  { value: 'blackProtestant', label: 'Historically Black Protestant' },
   { value: 'orthodox', label: 'Orthodox' },
   { value: 'other', label: 'Other Christian' },
 ];
@@ -52,9 +54,20 @@ export interface CensusData {
 export interface AgeReligiosity {
   range: AgeBracket;
   christianPercent: number;
+  christianPercentMale: number;   // Gender-specific Christian % for men
+  christianPercentFemale: number; // Gender-specific Christian % for women
   devoutPercent: number;    // Percentage of Christians who are devout
   practicingPercent: number; // Percentage of Christians who are practicing
   nominalPercent: number;    // Percentage of Christians who are nominal
+  attendMonthlyPercent?: number;  // % who attend services monthly
+  prayDailyPercent?: number;      // % who pray daily
+}
+
+export interface DenominationGenderRatio {
+  menPer100Women: number;
+  source: string;
+  selfIdentified?: number;
+  actualAttendees?: number;
 }
 
 export interface DenominationData {
@@ -62,6 +75,7 @@ export interface DenominationData {
   name: string;
   percentOfPopulation: number;
   percentOfChristians: number;
+  genderRatio?: DenominationGenderRatio;
   marriageRate: number;
 }
 

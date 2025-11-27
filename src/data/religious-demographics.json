@@ -1,58 +1,98 @@
 {
   "year": "2023-2024",
-  "source": "Pew Research Center - Religious Landscape Study",
-  "sourceUrl": "https://www.pewresearch.org/religion/religious-landscape-study/",
+  "source": "Pew Research Center - 2023-24 Religious Landscape Study (RLS)",
+  "sourceUrl": "https://www.pewresearch.org/religion/2025/02/26/religious-landscape-study-executive-summary/",
+  "datasetUrl": "https://www.pewresearch.org/dataset/2023-24-religious-landscape-study-rls-dataset/",
+  "sampleSize": 36908,
+  "fieldDates": "July 17, 2023 - March 4, 2024",
   "lastUpdated": "2025-02-26",
   "overallChristianPercent": 62,
+  "genderComposition": {
+    "source": "Pew Research Center - 'If the U.S. had 100 people' analysis",
+    "sourceUrl": "https://www.pewresearch.org/short-reads/2025/11/13/if-the-u-s-had-100-people-charting-americans-religious-affiliations/",
+    "christianWomenPer100Adults": 34,
+    "christianMenPer100Adults": 28,
+    "percentOfChristiansWhoAreWomen": 55,
+    "percentOfChristiansWhoAreMen": 45
+  },
   "byAge": [
     {
       "range": "18-24",
       "christianPercent": 46,
-      "devoutPercent": 25,
+      "christianPercentMale": 44,
+      "christianPercentFemale": 48,
+      "genderGapNote": "Gap is smallest among youngest adults per Pew 2024",
+      "devoutPercent": 28,
       "practicingPercent": 35,
-      "nominalPercent": 40
+      "nominalPercent": 37,
+      "attendMonthlyPercent": 25,
+      "prayDailyPercent": 27
     },
     {
       "range": "25-34",
       "christianPercent": 52,
-      "devoutPercent": 28,
+      "christianPercentMale": 48,
+      "christianPercentFemale": 56,
+      "devoutPercent": 30,
       "practicingPercent": 35,
-      "nominalPercent": 37
+      "nominalPercent": 35,
+      "attendMonthlyPercent": 30,
+      "prayDailyPercent": 32
     },
     {
       "range": "35-44",
       "christianPercent": 58,
+      "christianPercentMale": 53,
+      "christianPercentFemale": 63,
       "devoutPercent": 32,
       "practicingPercent": 36,
-      "nominalPercent": 32
+      "nominalPercent": 32,
+      "attendMonthlyPercent": 35,
+      "prayDailyPercent": 38
     },
     {
       "range": "45-54",
       "christianPercent": 64,
+      "christianPercentMale": 58,
+      "christianPercentFemale": 70,
       "devoutPercent": 35,
       "practicingPercent": 35,
-      "nominalPercent": 30
+      "nominalPercent": 30,
+      "attendMonthlyPercent": 40,
+      "prayDailyPercent": 45
     },
     {
       "range": "55-64",
       "christianPercent": 70,
+      "christianPercentMale": 64,
+      "christianPercentFemale": 76,
       "devoutPercent": 38,
       "practicingPercent": 35,
-      "nominalPercent": 27
+      "nominalPercent": 27,
+      "attendMonthlyPercent": 45,
+      "prayDailyPercent": 50
     },
     {
       "range": "65-74",
       "christianPercent": 76,
+      "christianPercentMale": 70,
+      "christianPercentFemale": 81,
       "devoutPercent": 42,
       "practicingPercent": 33,
-      "nominalPercent": 25
+      "nominalPercent": 25,
+      "attendMonthlyPercent": 49,
+      "prayDailyPercent": 55
     },
     {
       "range": "75+",
       "christianPercent": 80,
+      "christianPercentMale": 73,
+      "christianPercentFemale": 85,
       "devoutPercent": 45,
       "practicingPercent": 32,
-      "nominalPercent": 23
+      "nominalPercent": 23,
+      "attendMonthlyPercent": 49,
+      "prayDailyPercent": 58
     }
   ],
   "byDenomination": [
@@ -61,6 +101,10 @@
       "name": "Evangelical Protestant",
       "percentOfPopulation": 23,
       "percentOfChristians": 37.1,
+      "genderRatio": {
+        "menPer100Women": 93,
+        "source": "Institute for Family Studies analysis of GSS data"
+      },
       "marriageRate": 58
     },
     {
@@ -68,6 +112,10 @@
       "name": "Catholic",
       "percentOfPopulation": 19,
       "percentOfChristians": 30.6,
+      "genderRatio": {
+        "menPer100Women": 95,
+        "source": "Estimated from Pew RLS data"
+      },
       "marriageRate": 52
     },
     {
@@ -75,21 +123,56 @@
       "name": "Mainline Protestant",
       "percentOfPopulation": 11,
       "percentOfChristians": 17.7,
+      "genderRatio": {
+        "menPer100Women": 91,
+        "selfIdentified": 91,
+        "actualAttendees": 71,
+        "source": "Institute for Family Studies analysis"
+      },
       "marriageRate": 62
+    },
+    {
+      "id": "blackProtestant",
+      "name": "Historically Black Protestant",
+      "percentOfPopulation": 6,
+      "percentOfChristians": 9.7,
+      "genderRatio": {
+        "menPer100Women": 55,
+        "percentWomen": 64,
+        "percentMen": 35,
+        "source": "Pew Research Center 2023-24 RLS",
+        "sourceUrl": "https://www.pewresearch.org/religion/2025/02/26/age-race-education-and-other-demographic-traits-of-us-religious-groups/"
+      },
+      "marriageRate": 35
     },
     {
       "id": "orthodox",
       "name": "Orthodox Christian",
       "percentOfPopulation": 1,
       "percentOfChristians": 1.6,
+      "genderRatio": {
+        "menPer100Women": 100,
+        "source": "Estimated - roughly balanced"
+      },
       "marriageRate": 48
     },
     {
       "id": "other",
       "name": "Other Christian",
-      "percentOfPopulation": 8,
-      "percentOfChristians": 13.0,
+      "percentOfPopulation": 3,
+      "percentOfChristians": 4.8,
+      "genderRatio": {
+        "menPer100Women": 95,
+        "source": "Estimated"
+      },
       "marriageRate": 55
     }
-  ]
+  ],
+  "devoutPractitionerGenderRatio": {
+    "menPer100Women": 85,
+    "percentOfUnmarriedMenWhoAreDevout": 12,
+    "percentOfUnmarriedWomenWhoAreDevout": 18,
+    "source": "Institute for Family Studies",
+    "sourceUrl": "https://ifstudies.org/blog/sex-ratios-in-the-pews-is-there-really-a-deficit-of-men-in-american-churches"
+  }
 }

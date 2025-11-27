@@ -41,10 +41,12 @@ function getMatchingBrackets(
 }
 
 /**
- * Calculate the Christian percentage to apply based on filters
+ * Calculate the Christian percentage to apply based on filters and gender
+ * Uses gender-specific Christian percentages for more accurate calculations
  */
 function getChristianMultiplier(
   bracket: AgeBracket,
+  gender: 'male' | 'female',
   denomination: Denomination,
   religiosity: ReligiosityLevel,
   religiousData: ReligiousData
@@ -53,8 +55,13 @@ function getChristianMultiplier(
   const ageData = religiousData.byAge.find((a) => a.range === bracket);
   if (!ageData) return 0;
 
-  // Start with overall Christian percentage for this age
-  let multiplier = ageData.christianPercent / 100;
+  // Use gender-specific Christian percentage for this age
+  // Falls back to overall percentage if gender-specific not available
+  const christianPercent = gender === 'male'
+    ? (ageData.christianPercentMale ?? ageData.christianPercent)
+    : (ageData.christianPercentFemale ?? ageData.christianPercent);
+
+  let multiplier = christianPercent / 100;
 
   // Apply denomination filter if not 'all'
   if (denomination !== 'all') {
@@ -64,6 +71,19 @@ function getChristianMultiplier(
     if (denomData) {
       // Use percentage of Christians who belong to this denomination
       multiplier *= denomData.percentOfChristians / 100;
+
+      // Apply denomination-specific gender ratio if available
+      // This adjusts for denominations with different gender compositions
+      if (denomData.genderRatio && denomData.genderRatio.menPer100Women) {
+        const ratio = denomData.genderRatio.menPer100Women;
+        // Convert ratio to gender-specific multiplier
+        // If 85 men per 100 women: men = 85/185 = 46%, women = 100/185 = 54%
+        if (gender === 'male') {
+          multiplier *= (ratio / (ratio + 100)) / 0.5; // Normalize to 50% baseline
+        } else {
+          multiplier *= (100 / (ratio + 100)) / 0.5;
+        }
+      }
     }
   }
 
@@ -91,6 +111,7 @@ function getChristianMultiplier(
 
 /**
  * Calculate unmarried population for a bracket
+ * Note: Census data is stored in thousands, so we multiply by 1000
  */
 function getUnmarriedCount(
   bracket: AgeBracket,
@@ -103,10 +124,13 @@ function getUnmarriedCount(
   if (!bracketData) return { total: 0, widows: 0, divorced: 0 };
 
   const data = bracketData[gender];
+  // Census data is in thousands - multiply by 1000 to get actual count
+  const multiplier = 1000;
+
   // Always include never married and separated
-  let total = data.neverMarried + data.separated;
-  const widows = data.widowed;
-  const divorced = data.divorced;
+  let total = (data.neverMarried + data.separated) * multiplier;
+  const widows = data.widowed * multiplier;
+  const divorced = data.divorced * multiplier;
 
   if (includeDivorced) {
     total += divorced;
@@ -138,6 +162,7 @@ function calculateBracketResult(
   const womenData = getUnmarriedCount(bracket, 'female', includeWidows, includeDivorced, censusData);
   const womenMultiplier = getChristianMultiplier(
     bracket,
+    'female',
     denomination,
     religiosity,
     religiousData
@@ -161,6 +186,7 @@ function calculateBracketResult(
   const currentMenData = getUnmarriedCount(bracket, 'male', false, includeDivorced, censusData);
   const currentMenMultiplier = getChristianMultiplier(
     bracket,
+    'male',
     denomination,
     religiosity,
     religiousData
@@ -177,6 +203,7 @@ function calculateBracketResult(
       const olderMenData = getUnmarriedCount(olderBracket, 'male', false, includeDivorced, censusData);
       const olderMenMultiplier = getChristianMultiplier(
         olderBracket,
+        'male',
         denomination,
         religiosity,
         religiousData
@@ -297,10 +324,8 @@ export function calculateResults(
   religiousData: ReligiousData,
   polygynyDistribution?: PolygynyDistribution
 ): CalculatorResult {
-  // Filter to selected age brackets
-  const selectedBrackets = filters.ageBrackets.length > 0
-    ? filters.ageBrackets
-    : AGE_BRACKETS;
+  // Use selected age brackets (empty array = no results)
+  const selectedBrackets = filters.ageBrackets;
 
   // Calculate monogamy results for each bracket
   const monogamyBrackets = selectedBrackets.map((bracket) =>

@@ -1,60 +1,112 @@
 {
   "sources": [
     {
-      "id": "census-b12002",
-      "name": "US Census Bureau - Table B12002",
-      "url": "https://censusreporter.org/tables/B12002/",
-      "description": "Sex by Marital Status by Age for the Population 15 Years and Over from the American Community Survey",
-      "lastUpdated": "2024-09-01",
+      "id": "census-cps-asec-2023",
+      "name": "U.S. Census Bureau - Current Population Survey ASEC 2023",
+      "url": "https://www2.census.gov/programs-surveys/demo/tables/age-and-sex/2023/age-sex-composition/2023agesex_table2.csv",
+      "description": "Table 2: Marital Status of the Population 15 Years and Over by Sex and Age. Primary source for population counts by marital status, age, and gender.",
+      "dataType": "CSV download",
+      "lastUpdated": "2024-05-01",
+      "dataYear": "2023",
+      "sampleType": "Annual Social and Economic Supplement survey"
+    },
+    {
+      "id": "census-families-2023",
+      "name": "U.S. Census Bureau - America's Families and Living Arrangements 2023",
+      "url": "https://www.census.gov/data/tables/2023/demo/families/cps-2023.html",
+      "description": "Comprehensive tables on marital status, living arrangements, and family characteristics.",
+      "dataType": "Excel/CSV tables",
+      "lastUpdated": "2024-05-01",
       "dataYear": "2023"
     },
     {
-      "id": "census-marital-historical",
-      "name": "US Census Bureau - Historical Marital Status Tables",
-      "url": "https://www.census.gov/data/tables/time-series/demo/families/marital.html",
-      "description": "Historical data on marital status including median age at first marriage",
-      "lastUpdated": "2024-01-01",
-      "dataYear": "1890-2023"
+      "id": "pew-rls-2024",
+      "name": "Pew Research Center - 2023-24 Religious Landscape Study",
+      "url": "https://www.pewresearch.org/religion/2025/02/26/religious-landscape-study-executive-summary/",
+      "description": "Comprehensive survey of 36,908 U.S. adults on religious identification, beliefs, and practices. Primary source for Christianity rates by age and religiosity levels.",
+      "dataType": "Survey data",
+      "lastUpdated": "2025-02-26",
+      "dataYear": "2023-2024",
+      "sampleSize": 36908,
+      "fieldDates": "July 17, 2023 - March 4, 2024"
     },
     {
-      "id": "pew-rls-2024",
-      "name": "Pew Research Center - Religious Landscape Study",
-      "url": "https://www.pewresearch.org/religion/religious-landscape-study/",
-      "description": "Comprehensive survey of 36,908 respondents on religious identification, beliefs, and practices in America",
+      "id": "pew-rls-dataset",
+      "name": "Pew Research Center - RLS Public Use Dataset",
+      "url": "https://www.pewresearch.org/dataset/2023-24-religious-landscape-study-rls-dataset/",
+      "description": "Downloadable dataset for detailed cross-tabulations. Requires statistical software (SPSS, Stata, R).",
+      "dataType": "SPSS/Stata dataset",
       "lastUpdated": "2025-02-26",
       "dataYear": "2023-2024"
     },
     {
-      "id": "pew-marriage-denomination",
-      "name": "Pew Research Center - Marriage by Religious Group",
-      "url": "https://www.pewresearch.org/short-reads/2018/03/19/share-of-married-adults-varies-widely-across-u-s-religious-groups/",
-      "description": "Analysis of marriage rates across different religious denominations",
-      "lastUpdated": "2018-03-19",
-      "dataYear": "2017"
+      "id": "pew-gender-composition",
+      "name": "Pew Research Center - Gender Composition Analysis",
+      "url": "https://www.pewresearch.org/short-reads/2025/11/13/if-the-u-s-had-100-people-charting-americans-religious-affiliations/",
+      "description": "Analysis showing 34 Christian women vs 28 Christian men per 100 U.S. adults. Source for overall gender gap in Christianity.",
+      "dataType": "Published analysis",
+      "lastUpdated": "2025-11-13",
+      "dataYear": "2023-2024",
+      "keyFindings": [
+        "34 Christian women per 100 U.S. adults",
+        "28 Christian men per 100 U.S. adults",
+        "55% of Christians are women, 45% are men"
+      ]
     },
     {
-      "id": "census-widowhood",
-      "name": "US Census Bureau - Widowhood Statistics",
-      "url": "https://www.census.gov/library/stories/2021/04/love-and-loss-among-older-adults.html",
-      "description": "Statistics on widowhood demographics in the United States",
-      "lastUpdated": "2021-04-01",
-      "dataYear": "2020"
+      "id": "pew-demographics",
+      "name": "Pew Research Center - Religious Group Demographics",
+      "url": "https://www.pewresearch.org/religion/2025/02/26/age-race-education-and-other-demographic-traits-of-us-religious-groups/",
+      "description": "Detailed demographic profiles including gender composition by denomination. Source for historically Black Protestant gender gap (64% women, 35% men).",
+      "dataType": "Published analysis",
+      "lastUpdated": "2025-02-26",
+      "dataYear": "2023-2024"
+    },
+    {
+      "id": "ifs-gender-ratio",
+      "name": "Institute for Family Studies - Sex Ratios in the Pews",
+      "url": "https://ifstudies.org/blog/sex-ratios-in-the-pews-is-there-really-a-deficit-of-men-in-american-churches",
+      "description": "Analysis of gender ratios among unmarried Christians by denomination and religiosity. Source for devout practitioner ratio (85 men per 100 women) and denomination-specific gender gaps.",
+      "dataType": "Published analysis",
+      "lastUpdated": "2024-01-01",
+      "dataYear": "2022-2023",
+      "keyFindings": [
+        "Devout practitioners: 85 men per 100 women",
+        "12% of unmarried men are devout, 18% of unmarried women",
+        "Mainline actual attendees: 71 men per 100 women",
+        "Evangelical: 93 men per 100 women"
+      ]
     }
   ],
   "methodology": {
-    "description": "This calculator combines US Census Bureau data on marital status with Pew Research Center data on religious demographics to estimate the number of unmarried Christian women by age bracket.",
-    "limitations": [
-      "Data is based on surveys with sampling error",
-      "Religious identification is self-reported",
-      "Christian encompasses wide theological diversity",
-      "Marriage market is not geographically uniform",
-      "Individual preferences and circumstances vary widely"
+    "description": "This calculator combines verified U.S. Census Bureau data on marital status with Pew Research Center data on religious demographics to estimate unmarried Christian populations by age, gender, and religiosity.",
+    "dataIntegration": [
+      "Census provides exact population counts by age, gender, and marital status",
+      "Pew provides Christian percentages by age with gender-specific rates",
+      "Religiosity filters apply Pew attendance/practice data",
+      "Denomination filters use Pew and IFS gender ratio data"
     ],
     "calculations": [
-      "Christian population = Total population × Christian percentage for age bracket",
-      "Religiosity filter = Christian population × religiosity percentage",
-      "Unmarried = Never married + Divorced + Widowed (if included)",
-      "Surplus = Unmarried Christian Women - Available Unmarried Christian Men"
+      "Unmarried population = Never married + Divorced + (optionally) Widowed + Separated",
+      "Christian men = Unmarried men × Christian % for men in age bracket",
+      "Christian women = Unmarried women × Christian % for women in age bracket",
+      "Surplus = Christian women - Christian men (adjusted for religiosity and denomination filters)"
+    ],
+    "limitations": [
+      "Census data is survey-based with sampling error (CPS ASEC ~95,000 households)",
+      "Pew data is survey-based with ±2-3% margin of error",
+      "Gender-specific Christian rates by age are interpolated from overall gender gap data",
+      "Marriage market is not geographically uniform",
+      "Assumes within-religious-group marriage preference",
+      "Does not account for individual preferences, education, income, or location"
+    ],
+    "strengths": [
+      "Census data is from official U.S. government source with documented methodology",
+      "Pew RLS is the largest religious survey in America (36,908 respondents)",
+      "Gender gap data is directly sourced from Pew's published analysis",
+      "All sources are publicly verifiable with direct download links"
     ]
-  }
+  },
+  "lastVerified": "2025-11-27",
+  "verificationNotes": "All primary sources verified accessible. Census CSV confirmed to match published tables. Pew percentages confirmed against executive summary."
 }

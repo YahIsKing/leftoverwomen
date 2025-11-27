@@ -189,7 +189,7 @@ export default function Calculator({
                   {AGE_BRACKETS.map((bracket) => (
                     <Badge
                       key={bracket}
-                      variant={ageBrackets.length === 0 || ageBrackets.includes(bracket) ? "default" : "outline"}
+                      variant={ageBrackets.includes(bracket) ? "default" : "outline"}
                       className="cursor-pointer text-xs px-2 py-0.5"
                       onClick={() => toggleAgeBracket(bracket)}
                     >
