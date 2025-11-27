@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode - warm cream/gold theme */
+    --background: 40 33% 98%;
+    --foreground: 34 65% 39%;
+    --card: 38 100% 94%;
+    --card-foreground: 34 65% 39%;
+    --popover: 38 100% 94%;
+    --popover-foreground: 34 65% 39%;
+    --primary: 31 69% 57%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 183 19% 44%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 35 20% 90%;
+    --muted-foreground: 34 30% 45%;
+    --accent: 38 100% 90%;
+    --accent-foreground: 34 65% 30%;
+    --destructive: 11 95% 75%;
+    --destructive-foreground: 0 0% 0%;
+    --success: 91 25% 63%;
+    --success-foreground: 0 0% 0%;
+    --warning: 45 100% 69%;
+    --warning-foreground: 0 0% 0%;
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 31 69% 57%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark mode - deep plum with gold accents */
+    --background: 306 16% 11%;
+    --foreground: 34 47% 57%;
+    --card: 305 17% 15%;
+    --card-foreground: 34 47% 70%;
+    --popover: 305 17% 15%;
+    --popover-foreground: 34 47% 70%;
+    --primary: 31 69% 57%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 183 19% 44%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 305 15% 20%;
+    --muted-foreground: 34 25% 50%;
+    --accent: 305 17% 22%;
+    --accent-foreground: 34 47% 70%;
+    --destructive: 11 95% 75%;
+    --destructive-foreground: 0 0% 0%;
+    --success: 91 25% 63%;
+    --success-foreground: 0 0% 0%;
+    --warning: 45 100% 69%;
+    --warning-foreground: 0 0% 0%;
+    --border: 305 15% 22%;
+    --input: 305 15% 20%;
+    --ring: 31 69% 57%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar for dark theme */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: hsl(305 17% 15%);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: hsl(305 15% 30%);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: hsl(305 15% 40%);
+}
+
+/* Selection styling */
+::selection {
+  background-color: hsl(31 69% 57% / 0.3);
+  color: white;
+}
+
+/* Big number styling for the hero stat */
+.big-number {
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, hsl(31 69% 57%) 0%, hsl(45 100% 69%) 50%, hsl(31 69% 57%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

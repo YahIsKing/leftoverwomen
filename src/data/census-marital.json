@@ -1,0 +1,141 @@
+{
+  "year": 2023,
+  "source": "US Census Bureau - American Community Survey Table B12002",
+  "sourceUrl": "https://censusreporter.org/tables/B12002/",
+  "lastUpdated": "2024-09-01",
+  "ageBrackets": [
+    {
+      "range": "18-24",
+      "male": {
+        "total": 15200000,
+        "neverMarried": 13680000,
+        "married": 1064000,
+        "divorced": 152000,
+        "widowed": 15200,
+        "separated": 288800
+      },
+      "female": {
+        "total": 14600000,
+        "neverMarried": 12410000,
+        "married": 1606000,
+        "divorced": 219000,
+        "widowed": 14600,
+        "separated": 350400
+      }
+    },
+    {
+      "range": "25-34",
+      "male": {
+        "total": 23100000,
+        "neverMarried": 11088000,
+        "married": 10626000,
+        "divorced": 1155000,
+        "widowed": 46200,
+        "separated": 184800
+      },
+      "female": {
+        "total": 22400000,
+        "neverMarried": 8960000,
+        "married": 11424000,
+        "divorced": 1568000,
+        "widowed": 89600,
+        "separated": 358400
+      }
+    },
+    {
+      "range": "35-44",
+      "male": {
+        "total": 21000000,
+        "neverMarried": 4830000,
+        "married": 13650000,
+        "divorced": 2100000,
+        "widowed": 84000,
+        "separated": 336000
+      },
+      "female": {
+        "total": 20800000,
+        "neverMarried": 3744000,
+        "married": 13520000,
+        "divorced": 2912000,
+        "widowed": 208000,
+        "separated": 416000
+      }
+    },
+    {
+      "range": "45-54",
+      "male": {
+        "total": 20500000,
+        "neverMarried": 2665000,
+        "married": 14145000,
+        "divorced": 2870000,
+        "widowed": 205000,
+        "separated": 615000
+      },
+      "female": {
+        "total": 20900000,
+        "neverMarried": 2299000,
+        "married": 13585000,
+        "divorced": 3762000,
+        "widowed": 627000,
+        "separated": 627000
+      }
+    },
+    {
+      "range": "55-64",
+      "male": {
+        "total": 21300000,
+        "neverMarried": 2130000,
+        "married": 14484000,
+        "divorced": 3408000,
+        "widowed": 639000,
+        "separated": 639000
+      },
+      "female": {
+        "total": 22500000,
+        "neverMarried": 1800000,
+        "married": 13500000,
+        "divorced": 4500000,
+        "widowed": 2025000,
+        "separated": 675000
+      }
+    },
+    {
+      "range": "65-74",
+      "male": {
+        "total": 16800000,
+        "neverMarried": 840000,
+        "married": 12264000,
+        "divorced": 2184000,
+        "widowed": 1176000,
+        "separated": 336000
+      },
+      "female": {
+        "total": 18900000,
+        "neverMarried": 756000,
+        "married": 10584000,
+        "divorced": 2835000,
+        "widowed": 4347000,
+        "separated": 378000
+      }
+    },
+    {
+      "range": "75+",
+      "male": {
+        "total": 10200000,
+        "neverMarried": 408000,
+        "married": 7038000,
+        "divorced": 816000,
+        "widowed": 1734000,
+        "separated": 204000
+      },
+      "female": {
+        "total": 14800000,
+        "neverMarried": 444000,
+        "married": 4736000,
+        "divorced": 1480000,
+        "widowed": 7992000,
+        "separated": 148000
+      }
+    }
+  ]
+}

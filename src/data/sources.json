@@ -1,0 +1,60 @@
+{
+  "sources": [
+    {
+      "id": "census-b12002",
+      "name": "US Census Bureau - Table B12002",
+      "url": "https://censusreporter.org/tables/B12002/",
+      "description": "Sex by Marital Status by Age for the Population 15 Years and Over from the American Community Survey",
+      "lastUpdated": "2024-09-01",
+      "dataYear": "2023"
+    },
+    {
+      "id": "census-marital-historical",
+      "name": "US Census Bureau - Historical Marital Status Tables",
+      "url": "https://www.census.gov/data/tables/time-series/demo/families/marital.html",
+      "description": "Historical data on marital status including median age at first marriage",
+      "lastUpdated": "2024-01-01",
+      "dataYear": "1890-2023"
+    },
+    {
+      "id": "pew-rls-2024",
+      "name": "Pew Research Center - Religious Landscape Study",
+      "url": "https://www.pewresearch.org/religion/religious-landscape-study/",
+      "description": "Comprehensive survey of 36,908 respondents on religious identification, beliefs, and practices in America",
+      "lastUpdated": "2025-02-26",
+      "dataYear": "2023-2024"
+    },
+    {
+      "id": "pew-marriage-denomination",
+      "name": "Pew Research Center - Marriage by Religious Group",
+      "url": "https://www.pewresearch.org/short-reads/2018/03/19/share-of-married-adults-varies-widely-across-u-s-religious-groups/",
+      "description": "Analysis of marriage rates across different religious denominations",
+      "lastUpdated": "2018-03-19",
+      "dataYear": "2017"
+    },
+    {
+      "id": "census-widowhood",
+      "name": "US Census Bureau - Widowhood Statistics",
+      "url": "https://www.census.gov/library/stories/2021/04/love-and-loss-among-older-adults.html",
+      "description": "Statistics on widowhood demographics in the United States",
+      "lastUpdated": "2021-04-01",
+      "dataYear": "2020"
+    }
+  ],
+  "methodology": {
+    "description": "This calculator combines US Census Bureau data on marital status with Pew Research Center data on religious demographics to estimate the number of unmarried Christian women by age bracket.",
+    "limitations": [
+      "Data is based on surveys with sampling error",
+      "Religious identification is self-reported",
+      "Christian encompasses wide theological diversity",
+      "Marriage market is not geographically uniform",
+      "Individual preferences and circumstances vary widely"
+    ],
+    "calculations": [
+      "Christian population = Total population × Christian percentage for age bracket",
+      "Religiosity filter = Christian population × religiosity percentage",
+      "Unmarried = Never married + Divorced + Widowed (if included)",
+      "Surplus = Unmarried Christian Women - Available Unmarried Christian Men"
+    ]
+  }
+}

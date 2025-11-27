@@ -1,0 +1,95 @@
+{
+  "year": "2023-2024",
+  "source": "Pew Research Center - Religious Landscape Study",
+  "sourceUrl": "https://www.pewresearch.org/religion/religious-landscape-study/",
+  "lastUpdated": "2025-02-26",
+  "overallChristianPercent": 62,
+  "byAge": [
+    {
+      "range": "18-24",
+      "christianPercent": 46,
+      "devoutPercent": 25,
+      "practicingPercent": 35,
+      "nominalPercent": 40
+    },
+    {
+      "range": "25-34",
+      "christianPercent": 52,
+      "devoutPercent": 28,
+      "practicingPercent": 35,
+      "nominalPercent": 37
+    },
+    {
+      "range": "35-44",
+      "christianPercent": 58,
+      "devoutPercent": 32,
+      "practicingPercent": 36,
+      "nominalPercent": 32
+    },
+    {
+      "range": "45-54",
+      "christianPercent": 64,
+      "devoutPercent": 35,
+      "practicingPercent": 35,
+      "nominalPercent": 30
+    },
+    {
+      "range": "55-64",
+      "christianPercent": 70,
+      "devoutPercent": 38,
+      "practicingPercent": 35,
+      "nominalPercent": 27
+    },
+    {
+      "range": "65-74",
+      "christianPercent": 76,
+      "devoutPercent": 42,
+      "practicingPercent": 33,
+      "nominalPercent": 25
+    },
+    {
+      "range": "75+",
+      "christianPercent": 80,
+      "devoutPercent": 45,
+      "practicingPercent": 32,
+      "nominalPercent": 23
+    }
+  ],
+  "byDenomination": [
+    {
+      "id": "evangelical",
+      "name": "Evangelical Protestant",
+      "percentOfPopulation": 23,
+      "percentOfChristians": 37.1,
+      "marriageRate": 58
+    },
+    {
+      "id": "catholic",
+      "name": "Catholic",
+      "percentOfPopulation": 19,
+      "percentOfChristians": 30.6,
+      "marriageRate": 52
+    },
+    {
+      "id": "mainline",
+      "name": "Mainline Protestant",
+      "percentOfPopulation": 11,
+      "percentOfChristians": 17.7,
+      "marriageRate": 62
+    },
+    {
+      "id": "orthodox",
+      "name": "Orthodox Christian",
+      "percentOfPopulation": 1,
+      "percentOfChristians": 1.6,
+      "marriageRate": 48
+    },
+    {
+      "id": "other",
+      "name": "Other Christian",
+      "percentOfPopulation": 8,
+      "percentOfChristians": 13.0,
+      "marriageRate": 55
+    }
+  ]
+}
